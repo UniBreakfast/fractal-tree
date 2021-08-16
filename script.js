@@ -9,14 +9,15 @@ let iterationCount, trunkHeight, trunkThickness, branchRatio, branchProbability,
 
 const timers = []
 
-ctx.lineCap = "round"
 resize()
+ctx.lineCap = "round"
 updateValues()
 render()
 
 
 controlWrapper.onchange = createTree.onclick = onresize = () => {
     resize()
+    ctx.lineCap = "round"
     updateValues()
     timers.forEach(timerId => clearTimeout(timerId))
     timers.splice(0)
